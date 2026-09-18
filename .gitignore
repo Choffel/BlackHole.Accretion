@@ -1,0 +1,50 @@
+## Build & Output
+bin/
+obj/
+out/
+[Bb]in/
+[Oo]bj/
+[Lls]og/
+[Ll]ogs/
+publish/
+
+## IDE & Editors
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.idea/
+*.userprefs
+
+## User / OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+## NuGet
+*.nupkg
+*.snupkg
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+packages/
+
+## Environment & Local Settings
+appsettings.Development.json
+appsettings.Local.json
+*.env
+*.env.local
+
+## Test Results
+TestResults/
+*.coverage
+*.coveragexml
+
+## Crash Dumps
+*.dmp
+*.dump

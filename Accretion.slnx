@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Accretion.Api/Accretion.Api.csproj" />
+    <Project Path="src/Accretion.Application/Accretion.Application.csproj" />
+    <Project Path="src/Accretion.Domain/Accretion.Domain.csproj" />
+    <Project Path="src/Accretion.Infrastructure/Accretion.Infrastructure.csproj" />
+  </Folder>
+</Solution>
