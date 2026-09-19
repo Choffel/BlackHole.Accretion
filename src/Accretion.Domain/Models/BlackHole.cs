@@ -2,7 +2,7 @@
 
 namespace Accretion.Domain.Models;
 
-public class BackHole
+public class BlackHole
 {
     public const double SpeedOfLight = 299_792_458.0;
     
@@ -18,7 +18,7 @@ public class BackHole
     
     public double IscoRadius => 3.0 * SchwarzschildRadius;
     
-    public BackHole(double mass, Vector3 position)
+    public BlackHole(double mass, Vector3 position)
     {
         Mass = mass;
         Position = position;
