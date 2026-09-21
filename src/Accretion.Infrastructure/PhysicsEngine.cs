@@ -40,7 +40,6 @@ public class PhysicsEngine : IPhysicsEngine
             float localDeltaTime = (float)(deltaTime * timeDilation);
             
             
-            // F = G * M / r^2 
             Vector3 normalizedDirection = Vector3.Normalize(directionToCenter);
             
             
