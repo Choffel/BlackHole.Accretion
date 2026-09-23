@@ -14,8 +14,6 @@ public class BlackHole
     
     public double SchwarzschildRadius { get; private set; }
     
-    public double PhotonSphereRadius => 1.5 * SchwarzschildRadius;
-    
     public double IscoRadius => 3.0 * SchwarzschildRadius;
     
     public BlackHole(double mass, Vector3 position)
@@ -24,9 +22,18 @@ public class BlackHole
         Position = position;
     }
 
-    public void  UpdateMass(double NewMass)
+    public void  UpdateMass(double newMass)
     {
-        Mass = NewMass;
+        if (double.IsNaN(newMass) || double.IsInfinity(newMass))
+        {
+            throw new ArgumentException("Mass must be a valid finite number.", nameof(newMass));
+        }
+
+        if (newMass <= 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(newMass), "Mass must be strictly positive.");
+        }
+        Mass = newMass;
         
         SchwarzschildRadius = (2.0 * GravitationalConstant * Mass) / (SpeedOfLight * SpeedOfLight);
     }

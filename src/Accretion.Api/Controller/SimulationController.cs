@@ -21,9 +21,9 @@ public class SimulationController : ControllerBase
     {
         return Ok(new
         {
-            IsPaused = _simulationStateService.IsPaused,
+            _simulationStateService.IsPaused,
             BlackHoleMass = _simulationStateService.BlackHole.Mass,
-            SchwarzschildRadius = _simulationStateService.BlackHole.SchwarzschildRadius,
+            _simulationStateService.BlackHole.SchwarzschildRadius,
             ParticleCount = _simulationStateService.Particles.Length
         });
     }
@@ -38,11 +38,6 @@ public class SimulationController : ControllerBase
     [HttpPut("mass")]
     public IActionResult UpdateMass([FromBody] UpdateMassRequest request)
     {
-        if (request.MassInKg <= 0)
-        {
-            return BadRequest("Масса должна быть больше 0.");
-        }
-
         _simulationStateService.UpdateBlackHoleMass(request.MassInKg);
 
         return Ok(new
@@ -55,11 +50,6 @@ public class SimulationController : ControllerBase
     [HttpPost("reset")]
     public IActionResult ResetDisk([FromBody] ResetDiskRequest request)
     {
-        if (request.Count <= 0)
-        {
-            return BadRequest("Количество частиц должно быть больше 0.");
-        }
-
         _simulationStateService.ResetDisk(request.Count, request.Seed);
         return Ok(new { Message = $"Диск успешно пересоздан с {request.Count} частицами." });
     }
